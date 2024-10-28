@@ -23,3 +23,17 @@ document.getElementById("newTab").addEventListener("click", function() {
 document.addEventListener("DOMContentLoaded", function() {
     openTab("newTab");
 });
+
+function openTab(tabId) {
+    // Скрываем все вкладки
+    const tabs = document.querySelectorAll('.tabcontent');
+    tabs.forEach(tab => tab.style.display = 'none');
+    
+    // Отображаем выбранную вкладку
+    document.getElementById(tabId).style.display = 'block';
+}
+
+// При загрузке страницы по умолчанию отображаем главную вкладку
+window.onload = function() {
+    openTab('newTab');
+};
